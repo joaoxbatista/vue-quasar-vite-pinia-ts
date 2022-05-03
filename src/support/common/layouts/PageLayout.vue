@@ -42,10 +42,6 @@ const props = defineProps({
     type: Boolean,
     default: true,
   },
-  sarch: {
-    type: String,
-    default: '',
-  },
   bodyClass: {
     type: String,
     default: '',

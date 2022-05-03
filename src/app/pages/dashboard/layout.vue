@@ -83,12 +83,10 @@
 </template>
 
 <script lang="ts">
-import { useAuthStore } from '@/domains/auth/store'
 import { useRoutes } from '@/router'
 import { useQuasar } from 'quasar'
 import { reactive, ref, watch } from 'vue'
 import { defineComponent } from 'vue'
-import { useRoute } from 'vue-router'
 
 export default defineComponent({
   name: 'DashboardLayout',
@@ -97,7 +95,7 @@ export default defineComponent({
     const darkMode = ref(true)
     // const route = useRoute()
     const routes = useRoutes()
-    const authStore = useAuthStore()
+
     const sideItems = reactive([
       {
         icon: 'location_city',
@@ -110,7 +108,6 @@ export default defineComponent({
     $q.dark.set(darkMode.value)
 
     const logout = () => {
-      authStore.logout()
       routes.LOGIN.push({})
     }
 
@@ -136,7 +133,6 @@ export default defineComponent({
       routes,
       drawer: ref(false),
       miniState: ref(true),
-      authStore,
       sideItems,
       logout,
     }

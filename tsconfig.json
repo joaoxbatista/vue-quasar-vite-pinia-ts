@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@cypress/*": ["cypress/*"]
+    },
+    "module": "ESNext",
+    "types": [
+      "node",
+      "webpack-env",
+      "vite/client",
+      "cypress",
+      "./cypress/types",
+    ],
+    "target": "es2016",
+    "lib": ["DOM", "ESNext"],
+    "allowJs": true,
+    "strict": true,
+
+    "incremental": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "name": "@vuedx/typescript-plugin-vue"
+      }
+    ]
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["./**/*.ts", "./**/*.vue"]
+}
